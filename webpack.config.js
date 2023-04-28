@@ -1,6 +1,7 @@
 const nodeExternals = require("webpack-node-externals");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const NodemonPlugin = require("nodemon-webpack-plugin");
+const DotenvWebpackPlugin = require("dotenv-webpack");
 
 const path = require("path");
 
@@ -29,6 +30,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [new NodemonPlugin()],
+  plugins: [new NodemonPlugin(), new DotenvWebpackPlugin()],
   externals: [nodeExternals()],
 };
